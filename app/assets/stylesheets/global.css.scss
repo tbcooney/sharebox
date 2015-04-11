@@ -1,0 +1,149 @@
+$dark_gray: #2B2E2E;
+$light_gray: #C0C1C1;
+$purple: #33CD99;
+$purple: #866496;
+$dark_purple: #675475;
+
+@mixin bold_font {
+  font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding-top: 4.5rem;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.wrapper_with_padding {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3.5rem 0;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+button, .button {
+  border: none;
+  outline: none;
+  background: $purple;
+  padding: 0.8rem 1.8rem;
+  border-radius: 1rem;
+  font-weight: bolder;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.button {
+  color: white;
+  margin: 2rem 0;
+}
+
+.fa{
+  display: inline ! important;
+}
+
+a {
+  color: $purple;
+  text-decoration: none;
+  &:hover {
+    color: $dark_gray;
+  }
+}
+
+header {
+  background: $dark_gray;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.75rem 0;
+  border-bottom: 7px solid $purple;
+  .header_inner {
+    width: 90%;
+    margin: 0 auto;
+    #logo {
+      display: inline-block;
+      width: 10rem;
+      float: left;
+    }
+    nav {
+      float: right;
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-left: 1rem;
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  text-align: center;
+  float: right;
+  width: 400px;
+  height: 600px;
+  display: block;
+  background: rgba(0,0,0,0.85) 0%;
+  border-bottom-left-radius:2em;
+  h2 {
+    padding-left: 15px;
+    padding-top: 20px;
+    @include bold_font;
+      color: white;
+      margin: 0;
+      letter-spacing: 1px;
+  }
+}
+
+footer {
+  background: $dark_gray;
+  width: 100%;
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+  @include bold_font;
+  p {
+    margin: 0;
+    font-size: .85rem;
+  }
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid $light_gray;
+  border-radius: .4rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  height: 40px;
+}
+
+textarea {
+  min-height: 200px;
+}
