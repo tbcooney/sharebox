@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   def index
-    @documents = Document.all
+    @documents = Document.all.order("created_at DESC")
   end
 
   def new
