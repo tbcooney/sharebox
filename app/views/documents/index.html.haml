@@ -2,19 +2,19 @@
   .alert.alert-info
     = flash[:notice]
 .wrapper_with_padding
-%h1 Sharebox
-%button= link_to "New Document", new_document_path
-%br/
-%br/
-%table.table.table-bordered.table-striped
-  %thead
-    %tr
-      %th Name
-      %th Download Link
-      %th  
-  %tbody
-    - @documents.each do |document|
+  %h1 Sharebox
+  %button= link_to "New Document", new_document_path
+  %br/
+  %br/
+  %table.table.table-bordered.table-striped
+    %thead
       %tr
-        %td= document.name
-        %td= link_to "Download Document", document.attachment_url
-        %td= button_to "Delete",  document, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{document.name}?"
+        %th Name
+        %th Download Link
+        %th  
+    %tbody
+      - @documents.each do |document|
+        %tr
+          %td= document.name
+          %td= link_to "Download Document", document.attachment_url
+          %td= button_to "Delete",  document, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{document.name}?"
