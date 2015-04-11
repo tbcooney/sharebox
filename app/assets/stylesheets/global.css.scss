@@ -28,7 +28,6 @@ body {
 .wrapper_with_padding {
   width: 80%;
   margin: 0 auto;
-  padding: 3.5rem 0;
 }
 
 .clearfix:before, .clearfix:after {
@@ -52,7 +51,11 @@ button, .button {
     color: white;
     text-decoration: none;
   }
-}
+    &:hover {
+      color: $dark_gray;
+      opacity: 0.8;
+      }
+  }
 
 .button {
   color: white;

@@ -1,8 +1,9 @@
 - if !flash[:notice].blank?
   .alert.alert-info
     = flash[:notice]
-%br/
-= link_to "New Document", new_document_path, class: "btn btn-primary"
+.wrapper_with_padding
+%h1 Sharebox
+%button= link_to "New Document", new_document_path
 %br/
 %br/
 %table.table.table-bordered.table-striped
