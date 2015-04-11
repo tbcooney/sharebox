@@ -8,4 +8,8 @@
     = csrf_meta_tags
   %body
     .container{:style => "padding-top:20px;"}
+    %header
+    .header_inner
+      = link_to image_tag(''), root_path, id: "logo"
+      %nav
       = yield
