@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   def index
-    @documents = Documents.all
+    @documents = Document.all
   end
 
   def new
@@ -8,23 +8,23 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new(document.params)
+    @document = Document.new(resume_params)
 
-    if @doucment.save
-      redirect_to documents_path, notice: "The file #{@resume.name} has been successfully uploaded."
+    if @document.save
+      redirect_to resumes_path, notice: "The document #{@document.name} has been uploaded."
     else
       render "new"
     end
   end
 
   def destroy
-    @resume = Resume.find(params[:id])
-    @resume.destroy
-    redirect_to resumes_path, notice:  "The resume #{@resume.name} has been deleted."
+    @document = Document.find(params[:id])
+    @document.destroy
+    redirect_to resumes_path, notice:  "The document #{@document.name} has been deleted."
   end
 
 private
-  def document_params
-    params.requier(:document).permit(:name, :attachment)
+  def resume_params
+    params.require(:document).permit(:name, :attachment)
   end
 end
